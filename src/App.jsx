@@ -3,11 +3,10 @@ import './App.css'
 import Nav from './components/nav/Nav'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-    <Nav />
+    <Nav pageTitle={'Overview'}/>
     </>
   )
 }
