@@ -1,4 +1,13 @@
 @import "tailwindcss";
+@font-face {
+  font-family: 'Inter';
+  src: url('../src/assets/fonts/inter-variable/Inter-Regular.woff2') format('woff2'),
+      url('../src/assets/fonts/inter-variable/Inter-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 body {
   min-height: 100vh;
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
