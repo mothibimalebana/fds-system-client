@@ -25,7 +25,7 @@ const Nav = ({pageTitle}) => {
             <div className="nav-container flex">
                 {/*Mobile*/}
                 <section className="md:hidden w-full">
-                    <div className="top w-full">
+                    <div className="top py-4 w-full">
                         <div className="nav-menu w-full grid grid-cols-4" onClick={() => {setNavOpen((prev) => !prev)}}>
                         <div className="svg flex justify-center self-center items-center">
                             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="14" viewBox="0 0 18 14" fill="none">
@@ -37,13 +37,12 @@ const Nav = ({pageTitle}) => {
                         <h3 className="col-start-2 col-end-4 justify-self-centre flex justify-center text-[20px]">{pageTitle}</h3>
                         </div>
                     </div>
-                    <div className="bottom">
-                    <div className="search">
-                        <input
-                            id="nav-search"
-                            onChange={inputHandler}
-                            placeholder="Search"
-                        />
+                    <div className="bottom py-4 flex justify-center">
+                    <div className="search flex gap-2 col-start-2 col-end-7 justify-center items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M14.8163 14.9347L11.2102 11.3286C12.1041 10.2388 12.6429 8.84286 12.6429 7.32143C12.6429 3.83163 9.81122 1 6.32143 1C2.82857 1 0 3.83163 0 7.32143C0 10.8112 2.82857 13.6429 6.32143 13.6429C7.84286 13.6429 9.23571 13.1071 10.3255 12.2133L13.9316 15.8163C14.1765 16.0612 14.5714 16.0612 14.8163 15.8163C15.0612 15.5745 15.0612 15.1765 14.8163 14.9347ZM6.32143 12.3847C3.52653 12.3847 1.2551 10.1133 1.2551 7.32143C1.2551 4.52959 3.52653 2.2551 6.32143 2.2551C9.11327 2.2551 11.3878 4.52959 11.3878 7.32143C11.3878 10.1133 9.11327 12.3847 6.32143 12.3847Z" fill="#718EBF"/>
+                    </svg>
+                        <input name="searchBar" placeholder="Search"/>
                     </div>
                     </div>
                 </section>
