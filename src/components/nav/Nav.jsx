@@ -2,6 +2,13 @@ import { useState } from "react";
 
 const Nav = ({pageTitle}) => {
     const [isNavOpen, setNavOpen] = useState(false);
+    const [inputText, setInputText] = useState("");
+
+    const inputHandler = (e) => {   //Getting user input
+        const lowerCase = e.target.value.toLowerCase();
+        setInputText(lowerCase)
+    }
+
     const navItems = [
         { id: 1, text: 'Dashboard' },
         { id: 2, text: 'Transactions' },
@@ -31,7 +38,13 @@ const Nav = ({pageTitle}) => {
                         </div>
                     </div>
                     <div className="bottom">
-
+                    <div className="search">
+                        <input
+                            id="nav-search"
+                            onChange={inputHandler}
+                            placeholder="Search"
+                        />
+                    </div>
                     </div>
                 </section>
             </div>
