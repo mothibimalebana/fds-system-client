@@ -43,3 +43,8 @@ input {
   height: 100vh;
   background-color: #F5F7FA;
 }
+li {
+  text-decoration: none;
+  text-decoration-style: none;
+  list-style: none;
+}

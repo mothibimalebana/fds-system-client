@@ -40,7 +40,7 @@ const Nav = ({pageTitle}) => {
                         <div className={isNavOpen ? "showMenuNav" : "hideMenuNav"}>
                             <div className="CROSS-ICON" onClick={() => setNavOpen(false)}>
                             <svg
-                                className="h-8 w-8 text-gray-600"
+                                className="h-8 w-8 text-gray-600 flex justify-end"
                                 viewBox="0 0 24 24"
                                 fill="none"
                                 stroke="currentColor"
@@ -52,17 +52,17 @@ const Nav = ({pageTitle}) => {
                                 <line x1="6" y1="6" x2="18" y2="18" />
                             </svg>
                             </div>
-                            <div className="menu-link">
-                                <li className="border-b uppercase">
+                            <div className="menu-link flex flex-col gap-4">
+                                <li className=" uppercase">
                                     <a href="#">Home</a>
                                 </li>
-                                <li className="border-b uppercase">
+                                <li className=" uppercase">
                                     <a href="#">About</a>
                                 </li>
-                                <li className="border-b uppercase">
+                                <li className=" uppercase">
                                     <a href="#">Contact</a>
                                 </li>
-                                <li className="border-b uppercase">
+                                <li className="uppercase">
                                     <a href="#">Location</a>
                                 </li>
                             </div>
