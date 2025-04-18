@@ -23,6 +23,7 @@ const Nav = ({pageTitle}) => {
     return(
         <>
             <div className="nav-container flex">
+
                 {/*Mobile*/}
                 <section className="md:hidden w-full">
                     <div className="top py-4 w-full">
@@ -35,6 +36,36 @@ const Nav = ({pageTitle}) => {
                             </svg>
                         </div>
                         <h3 className="col-start-2 col-end-4 justify-self-centre flex justify-center text-[20px]">{pageTitle}</h3>
+                        </div>
+                        <div className={isNavOpen ? "showMenuNav" : "hideMenuNav"}>
+                            <div className="CROSS-ICON" onClick={() => setNavOpen(false)}>
+                            <svg
+                                className="h-8 w-8 text-gray-600"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                strokeWidth="2"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                            >
+                                <line x1="18" y1="6" x2="6" y2="18" />
+                                <line x1="6" y1="6" x2="18" y2="18" />
+                            </svg>
+                            </div>
+                            <div className="menu-link">
+                                <li className="border-b uppercase">
+                                    <a href="#">Home</a>
+                                </li>
+                                <li className="border-b uppercase">
+                                    <a href="#">About</a>
+                                </li>
+                                <li className="border-b uppercase">
+                                    <a href="#">Contact</a>
+                                </li>
+                                <li className="border-b uppercase">
+                                    <a href="#">Location</a>
+                                </li>
+                            </div>
                         </div>
                     </div>
                     <div className="bottom py-4 flex justify-center">
