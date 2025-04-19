@@ -19,7 +19,8 @@ const Nav = ({pageTitle}) => {
         { id: 8, text: 'Settings' },
       ];
 
-      console.log(isNavOpen)
+    
+    
     return(
         <>
             <div className="nav-container flex">
@@ -38,7 +39,7 @@ const Nav = ({pageTitle}) => {
                         <h3 className="col-start-2 col-end-4 justify-self-centre flex justify-center text-[20px]">{pageTitle}</h3>
                         </div>
                         <div className={isNavOpen ? "showMenuNav" : "hideMenuNav"}>
-                            <div className="CROSS-ICON" onClick={() => setNavOpen(false)}>
+                            <div className="CROSS-ICON flex justify-end" onClick={() => setNavOpen(false)}>
                             <svg
                                 className="h-8 w-8 text-gray-600 flex justify-end"
                                 viewBox="0 0 24 24"
@@ -53,18 +54,15 @@ const Nav = ({pageTitle}) => {
                             </svg>
                             </div>
                             <div className="menu-link flex flex-col gap-4">
-                                <li className=" uppercase">
-                                    <a href="#">Home</a>
-                                </li>
-                                <li className=" uppercase">
-                                    <a href="#">About</a>
-                                </li>
-                                <li className=" uppercase">
-                                    <a href="#">Contact</a>
-                                </li>
-                                <li className="uppercase">
-                                    <a href="#">Location</a>
-                                </li>
+                                {
+                                    navItems.map((item) => {
+                                        return(
+                                            <li id={item.id} className="uppercase">
+                                                <a href={item.text}>{item.text}</a>
+                                            </li>
+                                        )
+                                    })
+                                }
                             </div>
                         </div>
                     </div>
@@ -74,6 +72,11 @@ const Nav = ({pageTitle}) => {
                         <path d="M14.8163 14.9347L11.2102 11.3286C12.1041 10.2388 12.6429 8.84286 12.6429 7.32143C12.6429 3.83163 9.81122 1 6.32143 1C2.82857 1 0 3.83163 0 7.32143C0 10.8112 2.82857 13.6429 6.32143 13.6429C7.84286 13.6429 9.23571 13.1071 10.3255 12.2133L13.9316 15.8163C14.1765 16.0612 14.5714 16.0612 14.8163 15.8163C15.0612 15.5745 15.0612 15.1765 14.8163 14.9347ZM6.32143 12.3847C3.52653 12.3847 1.2551 10.1133 1.2551 7.32143C1.2551 4.52959 3.52653 2.2551 6.32143 2.2551C9.11327 2.2551 11.3878 4.52959 11.3878 7.32143C11.3878 10.1133 9.11327 12.3847 6.32143 12.3847Z" fill="#718EBF"/>
                     </svg>
                         <input name="searchBar" placeholder="Search"/>
+                        <ul>
+                            {filteredData.map((item) => {
+                                <li key={item.id}>{item.text}</li>
+                            })}
+                        </ul>
                     </div>
                     </div>
                 </section>
