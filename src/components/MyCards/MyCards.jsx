@@ -1,0 +1,4 @@
+const Card = ([user]) => {
+    return
+
+}
