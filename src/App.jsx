@@ -1,12 +1,12 @@
 import { useState } from 'react'
 import './App.css'
-import Nav from './components/nav/Nav'
+import Card from './components/MyCards/MyCards'
 
 function App() {
 
   return (
     <>
-    <Nav pageTitle={'Overview'}/>
+    <Card/>    
     </>
   )
 }
