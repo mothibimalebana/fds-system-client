@@ -5,25 +5,11 @@ import "../../css/WeeklyActivity.css"
 
 const WeeklyActivity = () => {
   const canvasRef = useRef(null)
-  // Initialize with a default value that works server-side
-  const [isMobile, setIsMobile] = useState(false)
+  const [isClient, setIsClient] = useState(false)
 
-  // Update isMobile state on window resize
+  // Set isClient to true when component mounts (client-side only)
   useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768)
-    }
-
-    // Set initial value
-    handleResize()
-
-    // Add event listener
-    window.addEventListener("resize", handleResize)
-
-    // Clean up
-    return () => {
-      window.removeEventListener("resize", handleResize)
-    }
+    setIsClient(true)
   }, [])
 
   // Chart data
@@ -39,14 +25,20 @@ const WeeklyActivity = () => {
 
   // Draw chart
   useEffect(() => {
+    if (!isClient) return
+
     const canvas = canvasRef.current
     if (!canvas) return
 
     const ctx = canvas.getContext("2d")
     const width = canvas.width
     const height = canvas.height
+
+    // Determine if mobile based on screen width
+    const isMobile = window.innerWidth < 768
     const barWidth = isMobile ? 15 : 20
     const barSpacing = isMobile ? 25 : 40
+
     const maxValue = 500
     const startX = 40
     const startY = height - 40
@@ -92,44 +84,58 @@ const WeeklyActivity = () => {
     ctx.fillText("300", startX - 10, startY - (300 * (height - 80)) / maxValue + 5)
     ctx.fillText("400", startX - 10, startY - (400 * (height - 80)) / maxValue + 5)
     ctx.fillText("500", startX - 10, startY - (500 * (height - 80)) / maxValue + 5)
-  }, [isMobile])
+  }, [isClient])
 
   return (
     <div className="weekly-activity-container bg-white p-4 rounded-xl">
       <h2 className="text-[#343C6A] text-xl font-bold mb-4">Weekly Activity</h2>
 
       <div className="chart-legend flex gap-6 mb-4">
-        {isMobile ? (
-          <>
-            <div className="flex items-center gap-2">
-              <div className="w-3 h-3 rounded-full bg-[#2D60FF]"></div>
-              <span className="text-[#718EBF] text-xs">Deposit</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="w-3 h-3 rounded-full bg-[#16DBCC]"></div>
-              <span className="text-[#718EBF] text-xs">Withdraw</span>
-            </div>
-          </>
-        ) : (
-          <>
-            <div className="flex items-center gap-2">
-              <div className="w-3 h-3 rounded-full bg-[#FF4B4A]"></div>
-              <span className="text-[#718EBF] text-xs">Anomoly</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="w-3 h-3 rounded-full bg-[#2D60FF]"></div>
-              <span className="text-[#718EBF] text-xs">Deposit</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="w-3 h-3 rounded-full bg-[#16DBCC]"></div>
-              <span className="text-[#718EBF] text-xs">Withdrawal</span>
-            </div>
-          </>
-        )}
+        {/* Mobile Legend */}
+        <div className="md:hidden flex gap-6">
+          <div className="flex items-center gap-2">
+            <div className="w-3 h-3 rounded-full bg-[#2D60FF]"></div>
+            <span className="text-[#718EBF] text-xs">Deposit</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <div className="w-3 h-3 rounded-full bg-[#16DBCC]"></div>
+            <span className="text-[#718EBF] text-xs">Withdraw</span>
+          </div>
+        </div>
+
+        {/* Desktop Legend */}
+        <div className="hidden md:flex gap-6">
+          <div className="flex items-center gap-2">
+            <div className="w-3 h-3 rounded-full bg-[#FF4B4A]"></div>
+            <span className="text-[#718EBF] text-xs">Anomoly</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <div className="w-3 h-3 rounded-full bg-[#2D60FF]"></div>
+            <span className="text-[#718EBF] text-xs">Deposit</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <div className="w-3 h-3 rounded-full bg-[#16DBCC]"></div>
+            <span className="text-[#718EBF] text-xs">Withdrawal</span>
+          </div>
+        </div>
       </div>
 
-      <div className="chart-container h-[250px]">
-        <canvas ref={canvasRef} width="500" height="250" className="w-full h-full"></canvas>
+      {/* Chart container with placeholder for server-side rendering */}
+      <div className="chart-container h-[250px] relative">
+        {/* Placeholder shown during server-side rendering */}
+        <div
+          className={`absolute inset-0 bg-gray-100 rounded-lg flex items-center justify-center ${isClient ? "hidden" : "block"}`}
+        >
+          <div className="text-[#718EBF]">Chart loading...</div>
+        </div>
+
+        {/* Canvas only shown on client-side */}
+        <canvas
+          ref={canvasRef}
+          width="500"
+          height="250"
+          className={`w-full h-full ${isClient ? "block" : "hidden"}`}
+        ></canvas>
       </div>
     </div>
   )

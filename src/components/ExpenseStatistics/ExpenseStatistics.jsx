@@ -1,10 +1,16 @@
 "use client"
 
-import { useEffect, useRef } from "react"
+import { useState, useEffect, useRef } from "react"
 import "../../css/ExpenseStatistics.css"
 
 const ExpenseStatistics = () => {
   const canvasRef = useRef(null)
+  const [isClient, setIsClient] = useState(false)
+
+  // Set isClient to true when component mounts (client-side only)
+  useEffect(() => {
+    setIsClient(true)
+  }, [])
 
   // Expense data
   const expenseData = [
@@ -16,8 +22,7 @@ const ExpenseStatistics = () => {
 
   // Draw pie chart
   useEffect(() => {
-    // Only run on client-side
-    if (typeof window === "undefined") return
+    if (!isClient) return
 
     const canvas = canvasRef.current
     if (!canvas) return
@@ -52,14 +57,23 @@ const ExpenseStatistics = () => {
     ctx.arc(centerX, centerY, radius * 0.5, 0, 2 * Math.PI)
     ctx.fillStyle = "white"
     ctx.fill()
-  }, [])
+  }, [isClient])
 
   return (
     <div className="expense-statistics-container bg-white p-4 rounded-xl">
       <h2 className="text-[#343C6A] text-xl font-bold mb-4">Expense Statistics</h2>
 
-      <div className="chart-container flex justify-center h-[200px]">
-        <canvas ref={canvasRef} width="200" height="200"></canvas>
+      {/* Chart container with placeholder for server-side rendering */}
+      <div className="chart-container flex justify-center h-[200px] relative">
+        {/* Placeholder shown during server-side rendering */}
+        <div
+          className={`absolute inset-0 bg-gray-100 rounded-lg flex items-center justify-center ${isClient ? "hidden" : "block"}`}
+        >
+          <div className="text-[#718EBF]">Chart loading...</div>
+        </div>
+
+        {/* Canvas only shown on client-side */}
+        <canvas ref={canvasRef} width="200" height="200" className={`${isClient ? "block" : "hidden"}`}></canvas>
       </div>
 
       <div className="chart-legend grid grid-cols-2 gap-3 mt-4">
