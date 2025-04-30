@@ -75,7 +75,8 @@
     "eslint-plugin-react-hooks": "latest",
     "eslint-plugin-react-refresh": "latest",
     "react-router-dom": "latest",
-    "@vitejs/plugin-react": "latest"
+    "@vitejs/plugin-react": "latest",
+    "@tailwindcss/vite": "latest"
   },
   "devDependencies": {
     "@types/node": "^22",

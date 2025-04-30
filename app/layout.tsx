@@ -1,17 +1,20 @@
-import "../src/index.css"
+import type { Metadata } from 'next'
+import './globals.css'
 
-export const metadata = {
-  title: "Group18 FDS",
-  description: "Financial Dashboard System",
-    generator: 'v0.dev'
+export const metadata: Metadata = {
+  title: 'v0 App',
+  description: 'Created with v0',
+  generator: 'v0.dev',
 }
 
-export default function RootLayout({ children }) {
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode
+}>) {
   return (
     <html lang="en">
-      <body>
-        <div id="root">{children}</div>
-      </body>
+      <body>{children}</body>
     </html>
   )
 }
