@@ -1,4 +1,7 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @font-face {
   font-family: "Inter";
   src: url("../src/assets/fonts/inter-variable/Inter-Regular.woff2") format("woff2"),
@@ -10,31 +13,29 @@
 
 body {
   min-height: 100vh;
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Inter", system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
   color: #343c6a;
   background-color: #ffffff;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
+
 input {
   background: #f5f7fa;
   text-align: center;
 }
+
 .search {
   border-radius: 40px;
   background-color: #f5f7fa;
   width: 325px;
   height: 40px;
 }
+
 .hideMenuNav {
   display: none;
 }
+
 .showMenuNav {
   display: block;
   position: absolute;
@@ -42,6 +43,7 @@ input {
   height: 100vh;
   background-color: #f5f7fa;
 }
+
 li {
   text-decoration: none;
   text-decoration-style: none;

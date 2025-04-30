@@ -1,3 +1,6 @@
+"use client"
+
+import { useState, useEffect } from "react"
 import MyCards from "../../components/MyCards/MyCards"
 import RecentTransactions from "../../components/RecentTransactions/RecentTransactions"
 import WeeklyActivity from "../../components/WeeklyActivity/WeeklyActivity"
@@ -7,8 +10,14 @@ import ExpenseStatistics from "../../components/ExpenseStatistics/ExpenseStatist
 import "../../css/Dashboard.css"
 
 const Dashboard = () => {
+  const [isClient, setIsClient] = useState(false)
+
+  useEffect(() => {
+    setIsClient(true)
+  }, [])
+
   return (
-    <div className="dashboard-container p-4 md:p-6 bg-[#FAFBFF]">
+    <div className="dashboard-container p-4 md:p-6 bg-background">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* My Cards Section */}
         <div className="col-span-1 md:col-span-2">
