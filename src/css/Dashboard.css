@@ -1,0 +1,10 @@
+.dashboard-container {
+  width: 100%;
+  min-height: calc(100vh - 60px);
+}
+
+@media (min-width: 768px) {
+  .dashboard-container {
+    min-height: 100vh;
+  }
+}
