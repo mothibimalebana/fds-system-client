@@ -16,6 +16,9 @@ const ExpenseStatistics = () => {
 
   // Draw pie chart
   useEffect(() => {
+    // Only run on client-side
+    if (typeof window === "undefined") return
+
     const canvas = canvasRef.current
     if (!canvas) return
 

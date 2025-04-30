@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import MyCards from "../../components/MyCards/MyCards"
 import RecentTransactions from "../../components/RecentTransactions/RecentTransactions"
 import WeeklyActivity from "../../components/WeeklyActivity/WeeklyActivity"
@@ -10,12 +10,25 @@ import ExpenseStatistics from "../../components/ExpenseStatistics/ExpenseStatist
 import "../../css/Dashboard.css"
 
 const Dashboard = () => {
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768)
+  // Initialize with a default value that works server-side
+  const [isMobile, setIsMobile] = useState(false)
 
-  // Update isMobile state on window resize
-  window.addEventListener("resize", () => {
-    setIsMobile(window.innerWidth < 768)
-  })
+  // Check window size only after component mounts (client-side)
+  useEffect(() => {
+    // Function to update state based on window size
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768)
+    }
+
+    // Set initial value
+    handleResize()
+
+    // Add event listener
+    window.addEventListener("resize", handleResize)
+
+    // Clean up
+    return () => window.removeEventListener("resize", handleResize)
+  }, [])
 
   return (
     <div className="dashboard-container p-4 md:p-6 bg-[#FAFBFF]">

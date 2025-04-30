@@ -5,7 +5,8 @@ import "../../css/WeeklyActivity.css"
 
 const WeeklyActivity = () => {
   const canvasRef = useRef(null)
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768)
+  // Initialize with a default value that works server-side
+  const [isMobile, setIsMobile] = useState(false)
 
   // Update isMobile state on window resize
   useEffect(() => {
@@ -13,7 +14,13 @@ const WeeklyActivity = () => {
       setIsMobile(window.innerWidth < 768)
     }
 
+    // Set initial value
+    handleResize()
+
+    // Add event listener
     window.addEventListener("resize", handleResize)
+
+    // Clean up
     return () => {
       window.removeEventListener("resize", handleResize)
     }
