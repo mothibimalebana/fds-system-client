@@ -1,10 +1,12 @@
-import "./App.css"
-import Nav from "./components/nav/Nav"
+import { useState } from 'react'
+import './App.css'
+import Nav from './components/nav/Nav'
 
 function App() {
+
   return (
     <>
-      <Nav pageTitle={"Overview"} />
+    <Nav pageTitle={'Overview'}/>
     </>
   )
 }
