@@ -188,7 +188,7 @@ const Nav = ({pageTitle}) => {
                                         return(
                                             <li key={item.id} className="flex gap-4 uppercase">
                                                 {item.svg}
-                                                <Link to='#' onClick={() => setCurrNav(item.text)}>{item.text}</Link>
+                                                <Link to={item.text} onClick={() => setCurrNav(item.text)}>{item.text}</Link>
                                             </li>
                                         )
                                     })
@@ -223,7 +223,7 @@ const Nav = ({pageTitle}) => {
                                 return(
                                     <li className={`flex gap-2 ${currNav === item.text ? "nav-active" : "nav-unactive"}`} key={item.id}>
                                         {item.svg}
-                                        <Link to='#' onClick={() => setCurrNav(item.text)}>{item.text}</Link>
+                                        <Link to={item.text} onClick={() => setCurrNav(item.text)}>{item.text}</Link>
                                     </li>
                                 )
                             })}

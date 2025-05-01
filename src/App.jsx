@@ -1,20 +1,15 @@
-import { useState } from 'react'
+import { Outlet } from 'react-router-dom'
 import './App.css'
 import Nav from './components/nav/Nav'
-import { createBrowserRouter, RouterProvider, } from 'react-router-dom';
-import Dashboard from './dashboard/Dashboard';
 
-let router = createBrowserRouter([
-  {
-    path: '/',
-    Component: <Dashboard/>
-  }
-])
 function App() {
 
   return (
     <>
-    <Nav pageTitle={'Overview'}/>
+    <div className="appp">
+      <Nav pageTitle={'Overview'}/>
+      <h1>Hello</h1>
+    </div>
     </>
   )
 }
