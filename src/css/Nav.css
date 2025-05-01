@@ -1,3 +1,6 @@
+.section, .nav-container{
+    width: fit-content;
+}
 .navheader{
     font-size: 40px;
 }

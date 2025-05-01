@@ -6,9 +6,9 @@ function App() {
 
   return (
     <>
-    <div className="appp">
-      <Nav pageTitle={'Overview'}/>
-      <h1>Hello</h1>
+    <div className="app">
+      <Nav />
+      <div className="outlet"><Outlet/></div>
     </div>
     </>
   )
