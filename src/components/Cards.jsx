@@ -4,7 +4,7 @@ const CreditCard = ({ balance, cardHolder, cardNumber, expiry, variant }) => {
   const isLight = variant === "light"
 
   return (
-    <div className={`rounded-2xl p-6 ${isLight ? "bg-white" : "bg-primary text-white"}`}>
+    <div className="credit-card rounded-2xl p-6">
       <div className="flex justify-between items-start mb-8">
         <div>
           <p className={`text-sm ${isLight ? "text-gray-500" : "text-blue-100"}`}>Balance</p>
@@ -42,4 +42,4 @@ const CreditCard = ({ balance, cardHolder, cardNumber, expiry, variant }) => {
   )
 }
 
-export default CreditCard;
+export default CreditCard

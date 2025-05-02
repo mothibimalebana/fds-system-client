@@ -1,3 +1,4 @@
+@media (min-width: 768px) { 
 #root{
     min-height: 100vh;
     font-family: 'Inter';
@@ -12,4 +13,6 @@
     display: grid;
     grid-template-rows: auto 1fr;
     justify-items: center;
+    background-color: #F5F7FA;
 }
+ }
