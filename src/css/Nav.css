@@ -2,7 +2,7 @@
     width: fit-content;
 }
 .navheader{
-    font-size: 40px;
+    font-size: 30px;
 }
 .navbar{
     display: flex;
@@ -12,7 +12,7 @@
     max-width: 250px;
     height: 100vh;
     background: #FAFBFF;
-    gap: 3rem;
+    gap: 1rem;
 }
 
 .nav-items{
@@ -35,4 +35,7 @@
 }
 li.flex{
     padding-left: 2.2rem;
+}
+.logo{
+    padding: 1rem;
 }

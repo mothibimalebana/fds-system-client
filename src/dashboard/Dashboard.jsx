@@ -1,6 +1,8 @@
+import CreditCard from "../components/Cards"
+
 const Dashboard = () => {
 return(
-    <h1>Dashboard</h1>
+    <CreditCard/>
 )
 }
 

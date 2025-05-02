@@ -2,6 +2,16 @@
     align-items: center;
     gap: 1rem;
 }
+.left {
+    color: var(--Primary-2, #343C6A);
+
+    /* Heading one Semibold 28p */
+    font-family: 'Inter';
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
 .container{
     display: flex;
     width: 100vw;
