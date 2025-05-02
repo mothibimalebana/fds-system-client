@@ -8,3 +8,7 @@
     display: grid;
     grid-template-columns: auto 1fr;
 }
+.outlet{
+    display: grid;
+    grid-template-rows: auto 1fr;
+}

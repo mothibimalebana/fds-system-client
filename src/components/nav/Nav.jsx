@@ -1,11 +1,11 @@
 import { useState } from "react";
 import '../../css/Nav.css'
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const Nav = ({pageTitle}) => {
     const [isNavOpen, setNavOpen] = useState(false);
     const [inputText, setInputText] = useState("");
-    const [currNav,setCurrNav] = useState("Dashboard")
+    const [currNav,setCurrNav] = useState("Dashboard");
 
     const inputHandler = (e) => {   //Getting user input
         const lowerCase = e.target.value.toLowerCase();
