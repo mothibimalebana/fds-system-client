@@ -11,4 +11,5 @@
 .outlet{
     display: grid;
     grid-template-rows: auto 1fr;
+    justify-items: center;
 }

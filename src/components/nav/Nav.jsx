@@ -1,6 +1,6 @@
 import { useState } from "react";
 import '../../css/Nav.css'
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Nav = ({pageTitle}) => {
     const [isNavOpen, setNavOpen] = useState(false);
