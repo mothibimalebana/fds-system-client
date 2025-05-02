@@ -3,3 +3,7 @@
         background: #FFF;
     }
  }
+
+.title > h3{
+    font-weight: 700;
+}
