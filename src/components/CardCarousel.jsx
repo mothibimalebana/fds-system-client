@@ -1,22 +1,30 @@
-import React from 'react'
+import React, { useState } from 'react'
 import CreditCard from './Cards'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import 'swiper/css'
+import 'swiper/css';
+import 'swiper/css/pagination';
+import '../css/CardCarousel.css';
+
+// import required modules
+import { Pagination } from "swiper/modules"
 
 function CardCarousel() {
-  // Sample card data
-
-  return (
-    <Swiper>
-        <SwiperSlide>
-            <CreditCard/>
-        </SwiperSlide>
-
-        <SwiperSlide>
-            <CreditCard/>
-        </SwiperSlide>
-    </Swiper>
-  )
+    return (
+    <>
+      <Swiper
+        slidesPerView={1}
+        spaceBetween={1}
+        pagination={{
+          clickable: true,
+        }}
+        modules={[Pagination]}
+        className="mySwiper"
+      >
+        <SwiperSlide><CreditCard cardHolder='Thabisile Moloi'/></SwiperSlide>
+        <SwiperSlide><CreditCard cardHolder='Thabelo Budeli'/></SwiperSlide>
+      </Swiper>
+    </>
+  );
 }
 
 

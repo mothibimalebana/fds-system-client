@@ -1,7 +1,6 @@
 import { CreditCardIcon } from "@heroicons/react/24/solid"
 
-const CreditCard = ({ balance, cardHolder, cardNumber, expiry, variant }) => {
-  const isLight = variant === "light"
+const CreditCard = ({ balance='R0.00', cardHolder = 'Thabelo Budeli', cardNumber, expiry, }) => {
 
   return (
                 <div className="cards">
@@ -10,7 +9,7 @@ const CreditCard = ({ balance, cardHolder, cardNumber, expiry, variant }) => {
                         <div className="flex justify-between items-start mb-8">
                             <div>
                                 <p className="text-sm opacity-90">Balance</p>
-                                <p className="text-2xl font-bold">R56</p>
+                                <p className="text-2xl font-bold">{balance}</p>
                             </div>
 
                             {/* Card chip icon */}
@@ -28,7 +27,7 @@ const CreditCard = ({ balance, cardHolder, cardNumber, expiry, variant }) => {
                         <div className="flex justify-between mb-8">
                             <div>
                             <p className="text-xs opacity-70">CARD HOLDER</p>
-                            <p className="text-lg font-bold">Thabelo Budeli</p>
+                            <p className="text-lg font-bold">{cardHolder}</p>
                             </div>
                             <div className="text-right">
                             <p className="text-xs opacity-70">VALID THRU</p>
