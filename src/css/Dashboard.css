@@ -1,6 +1,7 @@
 @media (min-width: 768px) { 
     .container{
         background: #FFF;
+        max-width: none;
     }
  }
 

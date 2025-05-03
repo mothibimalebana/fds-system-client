@@ -11,6 +11,7 @@ function App() {
       <Nav />
       <div className="outlet col-start-2 col-end-3 w-full">
         <NavH/>
+        <Outlet/>
       </div>
     </div>
     </>

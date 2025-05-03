@@ -35,7 +35,9 @@ return(
             <div className="container flex flex-col justify-between w-full">
                 <div className="myCards">
                     <h3 className="cardsTitle">My Cards</h3>
-                    <div className="cardCarousel">
+                    <div className="cardCarousel flex gap-10">
+                        <CreditCard/>
+                        <CreditCard/>
                     </div>
                 </div>
                 <div className="recentTransactions">

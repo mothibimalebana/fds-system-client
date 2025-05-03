@@ -13,14 +13,14 @@ function CardCarousel() {
     <>
       <Swiper
         slidesPerView={1}
-        spaceBetween={1}
+        spaceBetween={4}
         pagination={{
           clickable: true,
         }}
         modules={[Pagination]}
         className="mySwiper"
       >
-        <SwiperSlide><CreditCard cardHolder='Thabisile Moloi'/></SwiperSlide>
+        <SwiperSlide className='swiperSlide'><CreditCard cardHolder='Thabisile Moloi'/></SwiperSlide>
         <SwiperSlide><CreditCard cardHolder='Thabelo Budeli'/></SwiperSlide>
       </Swiper>
     </>
