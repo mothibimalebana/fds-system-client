@@ -8,7 +8,7 @@ const NavH = ()  => {
     const currentPath = pathname.split('/')[1] || 'home';
 
     return(
-        <section className="hidden navH md:flex w-full">
+        <section className="hidden navH md:flex w-full p-5">
             <div className="container justify-between">
                 <div className="left">
                     <h3>{currentPath}</h3>

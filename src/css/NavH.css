@@ -13,17 +13,26 @@
     font-weight: 600;
     line-height: normal;
 }
+.left > h3 {
+    font-size: clamp(25px,30px, 35px);
+
+}
 .container{
     display: flex;
     align-items: center;
     width: 100%;
     max-width: none;
+    padding: 1rem 1.5rem 1rem 0rem;
 }
 .navH {
     min-width: 100%;
 
 }
 h3{
-    font-size: ;
+    font-size: minmax(24px, 28px);
+}
+.search{
+    width: minmax(200px, 325px);
+    height: minmax(30px, 40px); 
 }
 }
