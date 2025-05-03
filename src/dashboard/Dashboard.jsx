@@ -5,9 +5,9 @@ import '../css/Dashboard.css'
 
 const Dashboard = () => {
 return(
-    <div className="container w-full">
+    <div className="container flex w-full">
         {/*Mobile*/}
-        <section className="flex md:hidden">
+        <section className="md:hidden">
             <div className="container flex flex-col justify-between">
                 <div className="myCards">
                     <h3 className="cardsTitle">My Cards</h3>
@@ -31,7 +31,7 @@ return(
         </section>
     
         {/*Desktop*/}
-        <section className="container hidden md:flex">
+        <section className="hidden md:flex">
             <div className="container flex flex-col justify-between w-full">
                 <div className="myCards">
                     <h3 className="cardsTitle">My Cards</h3>
