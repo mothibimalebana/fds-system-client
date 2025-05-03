@@ -5,7 +5,10 @@
  }
 
 h3{
-    font-weight: 700;
-
     color: #343C6A;
+    font-family: 'Inter';
+    font-size: 16px;
+    font-weight: 600;
+    line-height: normal;
+    padding: 0 0 1rem 0.5rem;
 }

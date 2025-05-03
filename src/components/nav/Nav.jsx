@@ -170,7 +170,7 @@ const Nav = ({pageTitle}) => {
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M18 0.999998C18 1.55228 17.4801 2 16.8387 2L1.16129 2C0.519928 2 -6.78526e-08 1.55229 -4.37115e-08 1C-1.95704e-08 0.447719 0.519928 3.94468e-06 1.16129 3.7939e-06L16.8387 -5.07615e-08C17.4801 -2.61145e-07 18 0.447714 18 0.999998Z" fill="#343C6A"/>
                             </svg>
                         </div>
-                        <h3 className="col-start-2 col-end-4 justify-self-centre flex justify-center text-[20px]">{currNav}</h3>
+                        <h3 className="heading col-start-2 col-end-4 justify-self-centre flex justify-center text-[20px]">{currNav}</h3>
                         </div>
                         <div className={isNavOpen ? "showMenuNav" : "hideMenuNav"}>
                             <div className="CROSS-ICON flex justify-end" onClick={() => setNavOpen(false)}>

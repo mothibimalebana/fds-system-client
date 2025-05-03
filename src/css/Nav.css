@@ -1,5 +1,5 @@
 .section, .nav-container{
-    width: fit-content;
+    width: 100%;
 }
 .navheader{
     font-size: 30px;
@@ -38,4 +38,11 @@ li.flex{
 }
 .logo{
     padding: 1rem;
+}
+.showMenuNav{
+    z-index: 10;
+    background-color: #FFF;
+}
+.heading{
+    padding: 0;
 }
