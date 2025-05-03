@@ -10,8 +10,6 @@ function App() {
     <div className="app">
       <Nav />
       <div className="outlet">
-        <NavH/>
-        <Outlet/>
       </div>
     </div>
     </>

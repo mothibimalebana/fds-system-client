@@ -36,8 +36,6 @@ return(
                 <div className="myCards">
                     <h3 className="cardsTitle">My Cards</h3>
                     <div className="cardCarousel">
-                        <CreditCard/>
-                        <CreditCard/>
                     </div>
                 </div>
                 <div className="recentTransactions">

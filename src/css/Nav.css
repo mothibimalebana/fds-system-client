@@ -1,17 +1,21 @@
-.section, .nav-container{
-    width: 100%;
-}
+@media (min-width: 768px) { 
 .navheader{
-    font-size: 30px;
+    font-size: clamp(20px,25px, 30px,)
 }
 .navbar{
     display: flex;
     flex-direction: column;
 }
+.navbar,.nav-container{
+    width: 100%;
+}
+}
+
+
+
 .navbar{
-    max-width: 250px;
-    height: 100vh;
-    background: #FAFBFF;
+    height: 100%;
+    background: #FFF;
     gap: 1rem;
 }
 

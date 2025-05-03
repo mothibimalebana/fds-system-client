@@ -217,8 +217,8 @@ const Nav = ({pageTitle}) => {
                 </section>
 
                 {/*Desktop*/}
-                <section className="section hidden md:flex flex-col">
-                    <div className="navbar flex flex-col">
+                <section className="hidden md:flex flex-col h-full">
+                    <div className="navbar flex flex-col w-full">
                         <div className="logo flex items-center gap-2">
                             <img src="src/components/nav/logo.svg" alt="logo" />
                             <h2 className="navheader font-bold">Group 18</h2>
