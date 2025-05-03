@@ -40,17 +40,17 @@ return(
                         <CreditCard/>
                     </div>
                 </div>
-                <div className="recentTransactions">
-                    <h3 className="transactionTitle">My Transactions</h3>
+                <div className="recentTransactions flex">
+                    <h3 className="transactionTitle flex">My Transactions</h3>
                 </div>
-                <div className="weeklyActivity">
-                    <h3 className="activityTitle">Weekly </h3>
+                <div className="weeklyActivity flex">
+                    <h3 className="activityTitle flex">Weekly </h3>
                 </div>
-                <div className="expense"><div className="title">
-                    <h3 className="expenseTitle">Expenses</h3>
+                <div className="expense flex"><div className="title">
+                    <h3 className="expenseTitle flex">Expenses</h3>
                 </div></div>
-                <div className="quickTransfer"></div>
-                <div className="balanceHistory"></div>
+                <div className="quickTransfer flex"></div>
+                <div className="balanceHistory flex"></div>
             </div>
         </section>
     </div>

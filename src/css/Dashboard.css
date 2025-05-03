@@ -3,16 +3,16 @@
         background: #FFF;
         max-width: none;
     }
- }
-
-h3{
+    h3{
     color: #343C6A;
     font-family: 'Inter';
     font-size: 16px;
     font-weight: 600;
     line-height: normal;
-    padding: 0 0 1rem 0.5rem;
-}
-section{
-    background-color: #FFF;
-}
+    padding: 0;
+    }
+    section{
+        background-color: #FFF;
+    }
+
+ }
