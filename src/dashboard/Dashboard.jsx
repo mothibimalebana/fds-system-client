@@ -5,9 +5,9 @@ import '../css/Dashboard.css'
 
 const Dashboard = () => {
 return(
-    <div className="container flex w-full">
+    <div className="container flex">
         {/*Mobile*/}
-        <section className="md:hidden">
+        <section className="md:hidden w-full">
             <div className="container flex flex-col justify-between">
                 <div className="myCards">
                     <h3 className="cardsTitle">My Cards</h3>

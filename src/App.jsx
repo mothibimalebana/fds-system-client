@@ -9,7 +9,7 @@ function App() {
     <>
     <div className="app">
       <Nav />
-      <div className="outlet col-start-2 col-end-3 w-full">
+      <div className="outlet col-start-2 col-end-3">
         <NavH/>
         <Outlet/>
       </div>
