@@ -17,6 +17,8 @@ const TransactionList = () => {
             date:
             '28 January 2021'
             ,
+            id:
+            1,
         },
         {
             svg:
@@ -32,6 +34,7 @@ const TransactionList = () => {
             date:
             '25 january 2021'
             ,
+            id: 2,
         }
 
     ]
@@ -39,7 +42,7 @@ const TransactionList = () => {
     return(
         <div className="container">
             {transactionData.map((transactionData) => {
-                <div className="transaction">
+                <div key={transactionData.id} className="transaction flex">
                     <div className="svg">{transactionData.svg}</div>
                     <div className="descr">{transactionData.descr}</div>
                     <div className="amount">{transactionData.amount}</div>

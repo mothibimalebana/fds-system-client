@@ -5,7 +5,7 @@ import '../css/Dashboard.css'
 
 const Dashboard = () => {
 return(
-    <div className="container">
+    <div className="container w-full">
         {/*Mobile*/}
         <section className="flex md:hidden">
             <div className="container flex flex-col justify-between">
@@ -31,8 +31,8 @@ return(
         </section>
     
         {/*Desktop*/}
-        <section className="hidden md:flex">
-            <div className="container flex flex-col justify-between">
+        <section className="container hidden md:flex">
+            <div className="container flex flex-col justify-between w-full">
                 <div className="myCards">
                     <h3 className="cardsTitle">My Cards</h3>
                     <div className="cardCarousel">

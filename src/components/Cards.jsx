@@ -1,10 +1,11 @@
 import { CreditCardIcon } from "@heroicons/react/24/solid"
+import '../css/Card.css'
 
 const CreditCard = ({ balance='R0.00', cardHolder = 'Thabelo Budeli', cardNumber, expiry, }) => {
 
   return (
                 <div className="cards">
-                    <div className="bg-blue-600 text-white rounded-3xl p-6 w-full max-w-md">
+                    <div className="card text-white rounded-3xl p-6 w-full max-w-{350}">
                         {/* Top row */}
                         <div className="flex justify-between items-start mb-8">
                             <div>
