@@ -7,25 +7,29 @@ import '../css/CardCarousel.css';
 
 // import required modules
 import { Pagination } from "swiper/modules"
+import { CardProvider } from '../context/CardContext';
+import { UseCardList } from "../context/CardContext";
 
 function CardCarousel() {
-
+  const {cardList, addCard } = UseCardList();
     return (
-    <>
+    <CardProvider>
       <Swiper
         slidesPerView={1}
-        spaceBetween={4}
+        spaceBetween={2}
         pagination={{
           clickable: true,
         }}
         modules={[Pagination]}
         className="mySwiper"
       >
-        <SwiperSlide><CreditCard cardHolder='Thabelo Budeli'/></SwiperSlide>
-        <SwiperSlide><CreditCard cardHolder='Thabelo Budeli'/></SwiperSlide>
-        <SwiperSlide><CreditCard cardHolder='Thabelo Budeli'/></SwiperSlide>
+        {cardList.map((card, index) => {
+          return(
+        <SwiperSlide><CreditCard isEven={((index+1) % 2 ===0) ? true : false} balance={card.balance} cardHolder={card.CardHolder} cardNumber={card.cardNumber} expiry={card.expiry}/></SwiperSlide>
+          )
+        })}
       </Swiper>
-    </>
+    </CardProvider>
   );
 }
 

@@ -1,6 +1,19 @@
 .card {
-    max-width: 350px;
-    max-height: 235px;
+    width: 350px;
+    height: 235px;
     background: linear-gradient(107deg, #4C49ED 2.61%, #0A06F4 101.2%);
+    border-radius: 25px;
 
+}
+.even {
+    border-radius: 25px;
+    border: 1px solid #DFEAF2;
+    background: #FFF;
+
+    color: #343C6A;
+    font-family: Roboto;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
 }

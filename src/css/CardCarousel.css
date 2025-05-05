@@ -38,3 +38,7 @@ background: #FFF;
 .myCards {
     width: 100%;
 }
+
+.swiper-wrapper{
+  background: #FFF;
+}
