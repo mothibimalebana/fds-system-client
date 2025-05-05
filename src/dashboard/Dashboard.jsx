@@ -19,7 +19,6 @@ return(
                     </div>
                     <div className="recentTransactions">
                         <h3 className="transactionTitle">My Transactions</h3>
-                        <TransactionList />
                     </div>
                     <div className="weeklyActivity">
                         <h3 className="activityTitle">Weekly </h3>
