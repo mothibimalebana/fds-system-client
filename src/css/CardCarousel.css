@@ -30,6 +30,10 @@ body {
   justify-content: center;
   align-items: center;
 }
+.mySwiper:nth-child( even ) {
+border: 1px solid #DFEAF2;
+background: #FFF;
+}
 
 .myCards {
     width: 100%;

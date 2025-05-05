@@ -13,5 +13,8 @@
     section{
         background-color: #FFF;
     }
+    .cardCarousel {
+        width: 430px;
+    }
 
  }

@@ -9,6 +9,7 @@ import '../css/CardCarousel.css';
 import { Pagination } from "swiper/modules"
 
 function CardCarousel() {
+
     return (
     <>
       <Swiper
@@ -20,7 +21,8 @@ function CardCarousel() {
         modules={[Pagination]}
         className="mySwiper"
       >
-        <SwiperSlide className='swiperSlide'><CreditCard cardHolder='Thabisile Moloi'/></SwiperSlide>
+        <SwiperSlide><CreditCard cardHolder='Thabelo Budeli'/></SwiperSlide>
+        <SwiperSlide><CreditCard cardHolder='Thabelo Budeli'/></SwiperSlide>
         <SwiperSlide><CreditCard cardHolder='Thabelo Budeli'/></SwiperSlide>
       </Swiper>
     </>

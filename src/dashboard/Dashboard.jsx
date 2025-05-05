@@ -36,8 +36,7 @@ return(
                 <div className="myCards">
                     <h3 className="cardsTitle">My Cards</h3>
                     <div className="cardCarousel flex gap-10">
-                        <CreditCard/>
-                        <CreditCard/>
+                        <CardCarousel />
                     </div>
                 </div>
                 <div className="recentTransactions flex">
