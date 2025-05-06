@@ -13,6 +13,7 @@ const TransactionsContent = () => {
                 <div className="container flex flex-col justify-between">
                     <div className="myCards flex flex-col gap-3">
                         <h3 className="cardsTitle">My Cards</h3>
+<button onClick={addCard} className="addCard">+ Add Card</button>
                         <div className="cardCarousel">
                             <CardCarousel/>
                         </div>
