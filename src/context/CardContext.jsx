@@ -9,8 +9,10 @@ const CardProvider = ({ children }) => {
         { balance: 'R1220.00', cardHolder: 'Thabelo Budeli', cardNumber: '3778 **** **** 1234', expiry: '12/25'},
         { balance:'R5000.00', cardHolder: 'Thabelo Budeli', cardNumber: '3778 **** **** 1234', expiry: '06/27' },
     ])
-    const addCard = ({balance, cardHolder, cardNumber, expiry}) => {
-        setCardList((cardList) => cardList.push({balance, cardHolder, cardNumber, expiry}))
+    const addCard = () => {
+        const newCard = {balance:"R200",cardHolder:'Thabelo Budeli',cardNumber: '3778 **** **** 1234', expiry: '01/01/2027'}
+        console.log(cardList)
+        setCardList(prevCardList => [...prevCardList, newCard,]);
     }
     return(
 // wraps the children, making the props passed to it available to every component within its subtree

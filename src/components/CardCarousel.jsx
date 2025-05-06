@@ -13,23 +13,21 @@ import { UseCardList } from "../context/CardContext";
 function CardCarousel() {
   const {cardList, addCard } = UseCardList();
     return (
-    <CardProvider>
-      <Swiper
-        slidesPerView={1}
-        spaceBetween={2}
-        pagination={{
-          clickable: true,
-        }}
-        modules={[Pagination]}
-        className="mySwiper"
-      >
-        {cardList.map((card, index) => {
-          return(
-        <SwiperSlide><CreditCard isEven={((index+1) % 2 ===0) ? true : false} balance={card.balance} cardHolder={card.CardHolder} cardNumber={card.cardNumber} expiry={card.expiry}/></SwiperSlide>
-          )
-        })}
-      </Swiper>
-    </CardProvider>
+    <Swiper
+      slidesPerView={1}
+      spaceBetween={2}
+      pagination={{
+        clickable: true,
+      }}
+      modules={[Pagination]}
+      className="mySwiper"
+    >
+      {cardList.map((card, index) => {
+        return(
+      <SwiperSlide><CreditCard isEven={((index+1) % 2 ===0) ? true : false} balance={card.balance} cardHolder={card.CardHolder} cardNumber={card.cardNumber} expiry={card.expiry}/></SwiperSlide>
+        )
+      })}
+    </Swiper>
   );
 }
 

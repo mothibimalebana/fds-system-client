@@ -1,11 +1,12 @@
-import { CardProvider } from "../../context/CardContext"
+import { CardProvider, UseCardList } from "../../context/CardContext"
 import CardCarousel from "../CardCarousel"
 import '../../css/Dashboard.css'
 
-const Transactions = () => {
-    
+
+const TransactionsContent = () => {
+      const { addCard } = UseCardList()
     return(
-            <CardProvider>
+        <>
         <div className="container flex">
             {/*Mobile*/}
             <section className="md:hidden w-full">
@@ -25,7 +26,7 @@ const Transactions = () => {
                     <div className="myCards flex flex-col gap-3">
                         <div className="cardHeader flex justify-between">
                             <h3 className="cardsTitle">My Cards</h3>
-                            <button className="addCard">+ Add Card</button>
+                            <button onClick={addCard} className="addCard">+ Add Card</button>
                         </div>
                         <div className="cardCarousel flex gap-10">
                             <CardCarousel/>
@@ -34,8 +35,15 @@ const Transactions = () => {
                 </div>
             </section>
         </div>
-    </CardProvider>
+        </>
     )
 }
 
+const Transactions = () => {
+  return (
+    <CardProvider>
+      <TransactionsContent />
+    </CardProvider>
+  )
+}
 export default Transactions
