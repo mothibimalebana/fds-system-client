@@ -12,8 +12,10 @@ const TransactionsContent = () => {
             <section className="md:hidden w-full">
                 <div className="container flex flex-col justify-between">
                     <div className="myCards flex flex-col gap-3">
-                        <h3 className="cardsTitle">My Cards</h3>
-<button onClick={addCard} className="addCard">+ Add Card</button>
+                        <div className="cardHeader flex justify-between">
+                            <h3 className="cardsTitle">My Cards</h3>
+                            <button onClick={addCard} className="addCard">+ Add Card</button>
+                        </div>
                         <div className="cardCarousel">
                             <CardCarousel/>
                         </div>
